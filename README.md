@@ -1,4 +1,3 @@
-
 # Distance Metrics - Lab
 
 ## Introduction
@@ -53,10 +52,12 @@ In the cell below:
 import numpy as np
 
 # Complete this function! 
-def distance():
-    pass
-
-
+def distance(a, b, c=2, verbose=True):
+    if len(a) != len(b):
+        return "A and b not the same length"
+    a = np.array(a)
+    b = np.array(b)
+    return np.power(sum(np.power(abs(a - b),c)), 1/c)
 
 test_point_1 = (1, 2)
 test_point_2 = (4, 6)
@@ -64,6 +65,11 @@ print(distance(test_point_1, test_point_2)) # Expected Output: 5.0
 print(distance(test_point_1, test_point_2, c=1)) # Expected Output: 7.0
 print(distance(test_point_1, test_point_2, c=3)) # Expected Output: 4.497941445275415
 ```
+
+    5.0
+    7.0
+    4.497941445275415
+
 
 Great job! 
 
@@ -80,7 +86,17 @@ Point 2: (3, -1.2, -2, -1, 7)
 
 ```python
 # Expected Output: 17.939899665271266
+point_1 = (-2, -3.4, 4, 15, 7)
+point_2 = (3, -1.2, -2, -1, 7)
+distance(point_1, point_2)
 ```
+
+
+
+
+    17.939899665271266
+
+
 
 ## Problem 2
 
@@ -92,7 +108,17 @@ Point 2: \[1, -1, 5, 7, 14, 3, -2, 3, 3, 6\]
 
 ```python
 # Expected Output: 20.0
+point_1 = [0, 0, 0, 7, 16, 2, 0, 1, 2, 1]
+point_2 = [1, -1, 5, 7, 14, 3, -2, 3, 3, 6]
+distance(point_1, point_2, c=1)
 ```
+
+
+
+
+    20.0
+
+
 
 ## Problem 3
 
@@ -104,7 +130,17 @@ Point 2: (3, 4, 1.5)
 
 ```python
 # Expected Output: 5.268789659188307
+point_1 = (-2, 7, 3.4)
+point_2 = (3, 4, 1.5)
+distance(point_1, point_2, c=3.5)
 ```
+
+
+
+
+    5.268789659188307
+
+
 
 ## Summary
 
